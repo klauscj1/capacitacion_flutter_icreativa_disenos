@@ -4,16 +4,15 @@ import 'package:disenos_app/ui/widgets/dots_widget.dart';
 import 'package:disenos_app/ui/widgets/slide_widget.dart';
 import 'package:flutter/material.dart';
 
-class DisenoUnoPage extends StatefulWidget {
-  const DisenoUnoPage({Key? key}) : super(key: key);
+class DisenoUnoPageLogica extends StatefulWidget {
+  const DisenoUnoPageLogica({Key? key}) : super(key: key);
 
   @override
-  _DisenoUnoPageState createState() => _DisenoUnoPageState();
+  _DisenoUnoPageStateLogica createState() => _DisenoUnoPageStateLogica();
 }
 
-class _DisenoUnoPageState extends State<DisenoUnoPage> {
+class _DisenoUnoPageStateLogica extends State<DisenoUnoPageLogica> {
   late int currentPage;
-  final controllador = PageController();
 
   @override
   void initState() {
@@ -23,7 +22,6 @@ class _DisenoUnoPageState extends State<DisenoUnoPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -44,9 +42,8 @@ class _DisenoUnoPageState extends State<DisenoUnoPage> {
             ),
           ),
           Container(
-            height: size.height * 0.7,
+            height: 600,
             child: PageView.builder(
-              controller: controllador,
               onPageChanged: (valor) {
                 currentPage = valor;
                 setState(() {});
@@ -68,9 +65,10 @@ class _DisenoUnoPageState extends State<DisenoUnoPage> {
           currentPage != slides.length - 1
               ? FloatingActionButton(
                   onPressed: () {
-                    controllador.nextPage(
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.easeIn);
+                    if (currentPage < slides.length) {
+                      currentPage++;
+                      setState(() {});
+                    }
                   },
                   backgroundColor: DisenoUnoColores.colorUno,
                   child: Icon(
