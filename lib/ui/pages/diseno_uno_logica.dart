@@ -49,9 +49,9 @@ class _DisenoUnoPageStateLogica extends State<DisenoUnoPageLogica> {
                 setState(() {});
               },
               itemBuilder: (_, index) => SlideWidget(
-                slide: slides[index],
+                slide: paginas[index],
               ),
-              itemCount: slides.length,
+              itemCount: paginas.length,
             ),
           ),
         ],
@@ -62,10 +62,10 @@ class _DisenoUnoPageStateLogica extends State<DisenoUnoPageLogica> {
           DotsWidget(
             currentPage: currentPage,
           ),
-          currentPage != slides.length - 1
+          currentPage != paginas.length - 1
               ? FloatingActionButton(
                   onPressed: () {
-                    if (currentPage < slides.length) {
+                    if (currentPage < paginas.length) {
                       currentPage++;
                       setState(() {});
                     }

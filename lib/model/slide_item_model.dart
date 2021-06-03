@@ -13,45 +13,45 @@ class SlideItemModel {
   SlideItemModel({
     required this.titulo,
     required this.imagen,
-    required this.index,
+    required this.id,
   });
 
   String titulo;
   String imagen;
-  int index;
+  int id;
 
   factory SlideItemModel.fromJson(Map<String, dynamic> json) => SlideItemModel(
         titulo: json["titulo"],
         imagen: json["imagen"],
-        index: json["index"],
+        id: json["id"],
       );
 
   Map<String, dynamic> toJson() => {
         "titulo": titulo,
         "imagen": imagen,
-        "index": index,
+        "id": id,
       };
 }
 
-List<SlideItemModel> slides = [
+List<SlideItemModel> paginas = [
   SlideItemModel(
     titulo: 'esta es la frase para mostrar al primera imagen de los slides',
     imagen: 'assets/diseno_uno/undraw_Coding_re_iv62.png',
-    index: 0,
+    id: 0,
   ),
   SlideItemModel(
     titulo: 'esta es la frase para mostrar al segunda imagen de los slides',
     imagen: 'assets/diseno_uno/undraw_Lost_re_xqjt.png',
-    index: 1,
+    id: 1,
   ),
   SlideItemModel(
     titulo: 'esta es la frase para mostrar al tercera imagen de los slides',
     imagen: 'assets/diseno_uno/undraw_Mobile_inbox_re_ciwq.png',
-    index: 2,
+    id: 2,
   ),
   SlideItemModel(
     titulo: 'esta es la frase para mostrar al cuatro imagen de los slides',
     imagen: 'assets/diseno_uno/undraw_Coding_re_iv62.png',
-    index: 3,
+    id: 3,
   ),
 ];

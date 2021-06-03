@@ -12,17 +12,23 @@ class SlideWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final esInternet = slide.imagen.contains('http');
     return Column(
       children: [
+        //Lottie.asset('assets/diseno_uno/done_animation.json',),
+
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Image.asset(
-              slide.imagen,
-              fit: BoxFit.fitHeight,
-            ),
+            child: esInternet
+                ? Image.network(slide.imagen)
+                : Image.asset(
+                    slide.imagen,
+                    fit: BoxFit.fitHeight,
+                  ),
           ),
         ),
+
         Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
