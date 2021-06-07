@@ -1,3 +1,5 @@
+import 'package:disenos_app/domain/bloc/login_bloc.dart';
+import 'package:disenos_app/domain/bloc/register_bloc.dart';
 import 'package:disenos_app/domain/bloc/slide_bloc.dart';
 import 'package:disenos_app/routes.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SlideBloc()),
+        ChangeNotifierProvider(create: (_) => LoginBloc()),
+        ChangeNotifierProvider(create: (_) => RegisterBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

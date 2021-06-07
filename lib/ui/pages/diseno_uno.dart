@@ -27,7 +27,9 @@ class DisenoUnoPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20.0),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, 'login');
+                    },
                     child: Text(
                       'Skip',
                       style: TextStyle(

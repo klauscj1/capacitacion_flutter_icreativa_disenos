@@ -1,14 +1,15 @@
 import 'package:disenos_app/domain/bloc/login_bloc.dart';
+import 'package:disenos_app/domain/bloc/register_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final loginBloc = Provider.of<LoginBloc>(context);
+    final registerBloc = Provider.of<RegisterBloc>(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -19,7 +20,7 @@ class LoginPage extends StatelessWidget {
             ),
             Center(
               child: Text(
-                'Iniciar sesión',
+                'Registrar cuenta',
                 style: Theme.of(context).textTheme.headline3!.copyWith(
                       color: Colors.black.withOpacity(.7),
                     ),
@@ -30,13 +31,27 @@ class LoginPage extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
+                hintText: 'Tu nombre',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(100),
+                ),
+              ),
+              onChanged: (String valor) {
+                registerBloc.nombre = valor;
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextField(
+              decoration: InputDecoration(
                 hintText: 'Correo electrónico',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(100),
                 ),
               ),
               onChanged: (String valor) {
-                loginBloc.correo = valor;
+                registerBloc.correo = valor;
               },
             ),
             SizedBox(
@@ -51,7 +66,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               onChanged: (String valor) {
-                loginBloc.password = valor;
+                registerBloc.password = valor;
               },
             ),
             SizedBox(
@@ -63,21 +78,21 @@ class LoginPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
               ),
-              onPressed: loginBloc.permitir
+              onPressed: registerBloc.permitir
                   ? () {
-                      loginBloc.iniciarSesion(context);
+                      registerBloc.registro(context);
                     }
                   : null,
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 25),
-                child: Text('Login'),
+                child: Text('Registrar'),
               ),
             ),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'register');
+                Navigator.pop(context);
               },
-              child: Text('No tengo cuenta'),
+              child: Text('Ya tengo cuenta'),
             )
           ],
         ),
