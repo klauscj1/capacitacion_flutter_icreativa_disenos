@@ -1,4 +1,5 @@
 import 'package:disenos_app/domain/bloc/slide_bloc.dart';
+import 'package:disenos_app/domain/utils/preferencias.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,15 @@ class _SplashPageState extends State<SplashPage> {
     // final slideProvider = Provider.of<SlideBloc>(context, listen: false);
     //slideProvider.cargarSlides();
     Future.delayed(Duration(milliseconds: 800), () {
-      Navigator.pushReplacementNamed(context, 'uno');
+      Preferencias pref = Preferencias();
+      String token = pref.token;
+      if (token.length > 0) {
+        print('si tiene token');
+        Navigator.pushReplacementNamed(context, 'home');
+      } else {
+        print('no tiene token');
+        Navigator.pushReplacementNamed(context, 'uno');
+      }
     });
     Provider.of<SlideBloc>(context, listen: false).cargarSlides();
     super.initState();

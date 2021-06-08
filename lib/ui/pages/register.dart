@@ -1,4 +1,3 @@
-import 'package:disenos_app/domain/bloc/login_bloc.dart';
 import 'package:disenos_app/domain/bloc/register_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';

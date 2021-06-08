@@ -82,6 +82,11 @@ class RegisterBloc extends ChangeNotifier {
     print(this._correo);
     print(this._password);
     print(this._nombre);
-    await UsuarioService.login(context, this._correo, this._password);
+    await UsuarioService.register(
+      context,
+      this._correo,
+      this._password,
+      this._nombre,
+    );
   }
 }
