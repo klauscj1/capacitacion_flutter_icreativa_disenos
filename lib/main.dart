@@ -1,3 +1,4 @@
+import 'package:disenos_app/domain/bloc/gps_bloc.dart';
 import 'package:disenos_app/domain/bloc/login_bloc.dart';
 import 'package:disenos_app/domain/bloc/register_bloc.dart';
 import 'package:disenos_app/domain/bloc/slide_bloc.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SlideBloc()),
         ChangeNotifierProvider(create: (_) => LoginBloc()),
         ChangeNotifierProvider(create: (_) => RegisterBloc()),
+        ChangeNotifierProvider(create: (_) => GpsBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

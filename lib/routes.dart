@@ -1,5 +1,6 @@
 import 'package:disenos_app/ui/pages/diseno_uno.dart';
 import 'package:disenos_app/ui/pages/diseno_uno_logica.dart';
+import 'package:disenos_app/ui/pages/gps_page.dart';
 import 'package:disenos_app/ui/pages/home.dart';
 import 'package:disenos_app/ui/pages/login.dart';
 import 'package:disenos_app/ui/pages/register.dart';
@@ -14,5 +15,6 @@ Map<String, WidgetBuilder> rutas() {
     'login': (_) => LoginPage(),
     'register': (_) => RegisterPage(),
     'home': (_) => HomePage(),
+    'gps': (_) => GpsPage(),
   };
 }

@@ -16,7 +16,7 @@ class SlideBloc extends ChangeNotifier {
         imagen:
             "https://p4.wallpaperbetter.com/wallpaper/713/796/955/canal-amsterdam-cityscape-netherlands-winter-hd-wallpaper-preview.jpg"),
     CardModel(
-        id: 0,
+        id: 1,
         imagen:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDgn3k_GdYORDI4KSb-njV4qhyYhBNBnJ32Q&usqp=CAU"),
   ];

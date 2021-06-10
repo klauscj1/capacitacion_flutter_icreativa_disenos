@@ -119,5 +119,23 @@
 		<string>
 			Can I use the mic please?
 		</string>
+		<key>
+			NSLocationWhenInUseUsageDescription
+		</key>
+		<string>
+			necesitamos acceso a tu ubicacion para algo
+		</string>
+		<key>
+			NSLocationAlwaysUsageDescription
+		</key>
+		<string>
+			necesitamos acceso a tu ubicacion para algo
+		</string>
+		<key>
+			NSLocationAlwaysAndWhenInUseUsageDescription
+		</key>
+		<string>
+			necesitamos acceso a tu ubicacion para algo
+		</string>
 	</dict>
 </plist>

@@ -8,8 +8,17 @@ import "package:http/http.dart" as http;
 class SliderService {
   static Future<List<SlideItemModel>>? getSlides() async {
     try {
-      var respuesta = await http.get(Uri.parse(API_URL + "slide"));
-
+      var respuesta = await http
+          .get(Uri.parse(API_URL + "slide"))
+          .timeout(
+            Duration(
+              seconds: 5,
+            ),
+          )
+          .catchError((error) {
+        print('entra en catchError $error');
+      });
+      print(respuesta.statusCode);
       var jsonData = json.decode(respuesta.body);
       //SlideResponseModel slideResponse = slideResponseModelFromJson(jsonData);
       SlideResponseModel slideResponse = SlideResponseModel.fromJson(jsonData);
